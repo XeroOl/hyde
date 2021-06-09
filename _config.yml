@@ -1,26 +1,20 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
-# Permalinks
-permalink:        pretty
-relative_permalinks: true
+markdown: kramdown
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          /
+title:            Mirin Template
+tagline:          'A NotITG Template'
+description:      'A brazen two-column <a href="https://notitg.heysora.net" target="_blank">NotITG</a> template that pairs a prominent ease system with simple syntax. Made by <a href="https://github.com/XeroOl">XeroOl</a>.'
+url:              http://xerool.github.io
+baseurl:          /hyde/
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
-
-paginate:         5
+  name:           'XeroOl'
+  url:            www.github.com/XeroOl
 
 # Custom vars
-version:          2.1.0
+version:          3.0.1
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/XeroOl/notitg-mirin
+discord:
+  url:            https://discord.gg/wHTFcHdkyg
