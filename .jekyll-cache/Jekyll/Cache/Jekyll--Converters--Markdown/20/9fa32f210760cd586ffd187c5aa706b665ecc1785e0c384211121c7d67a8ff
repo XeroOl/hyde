@@ -1,0 +1,85 @@
+I"`<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ease</span> <span class="p">{</span><span class="n">beat</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">ease_fn</span><span class="p">,</span> <span class="n">percent</span><span class="p">,</span> <span class="n">mod</span><span class="p">}</span>
+</code></pre></div></div>
+<p>Use the <code class="language-plaintext highlighter-rouge">ease</code> function to animate a mod to a specific value at a specific beat in the song.
+The animation lasts <code class="language-plaintext highlighter-rouge">len</code> beats, and animates using the selected <code class="language-plaintext highlighter-rouge">ease_fn</code>.</p>
+
+<p>Arguments:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">beat: number</code></td>
+      <td>The song beat when the mod begins to apply.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">len: number</code></td>
+      <td>The amount of beats before the ease is complete.</td>
+    </tr>
+    <tr>
+      <td><a href="eases.md"><code class="language-plaintext highlighter-rouge">ease_fn: function</code></a></td>
+      <td>The way to approach the target value.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">percent: number</code></td>
+      <td>The target amount to set the mod to.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mod: string</code></td>
+      <td>The mod to apply.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Examples:</p>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ease</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">outExpo</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'invert'</span><span class="p">}</span>
+<span class="n">ease</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">outBack</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'movex'</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">ease</code> function can also take more than one percent/mod at a time.</p>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ease</span> <span class="p">{</span>
+	<span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">inCubic</span><span class="p">,</span>
+	<span class="mi">100</span><span class="p">,</span> <span class="s1">'invert'</span><span class="p">,</span>
+	<span class="mi">100</span><span class="p">,</span> <span class="s1">'drunk'</span><span class="p">,</span>
+	<span class="mi">100</span><span class="p">,</span> <span class="s1">'bumpy'</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">ease</code> can also be <a href="players.md">player specific</a>.</p>
+
+<h1 id="add">Add</h1>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add</span> <span class="p">{</span><span class="n">beat</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">ease_fn</span><span class="p">,</span> <span class="n">relative_percent</span><span class="p">,</span> <span class="n">mod</span><span class="p">}</span>
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">add</code> function works like <code class="language-plaintext highlighter-rouge">ease</code>, except it is relative. The <code class="language-plaintext highlighter-rouge">add</code> function will add to the old value of the mod instead of overriding the old value of the mod with a new value. So, for example, if a mod is currently at <code class="language-plaintext highlighter-rouge">200</code>, and an <code class="language-plaintext highlighter-rouge">add</code> runs with the value of <code class="language-plaintext highlighter-rouge">100</code>, the result would be <code class="language-plaintext highlighter-rouge">300</code>.</p>
+
+<p>Arguments:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">beat: number</code></td>
+      <td>The song beat when the mod begins to apply.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">len: number</code></td>
+      <td>The amount of beats before the ease is complete.</td>
+    </tr>
+    <tr>
+      <td><a href="eases.md"><code class="language-plaintext highlighter-rouge">ease_fn: function</code></a></td>
+      <td>The way to approach the target value.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">percent: number</code></td>
+      <td>The amount to add to the mod.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mod: string</code></td>
+      <td>The mod to apply.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example:</p>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">inExpo</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="s1">'rotationz'</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">add</code> can also be <a href="players.md">player specific</a>.</p>
+:ET

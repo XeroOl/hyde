@@ -1,0 +1,72 @@
+I"�<p>Splines are a feature of NotITG, and aren’t specific to the Mirin Template.</p>
+
+<p>tl;dr - list of points on the playfield (measured in time away from receptors, in beats)
+paired up with a list of mod values for those points.</p>
+
+<p>Arrow properties that can be spline’d:</p>
+<ul>
+  <li>X</li>
+  <li>Y</li>
+  <li>Z</li>
+  <li>RotationX</li>
+  <li>RotationY</li>
+  <li>RotationZ</li>
+  <li>Size</li>
+  <li>Stealth</li>
+  <li>Skew</li>
+</ul>
+
+<h1 id="how-to-apply">How to Apply:</h1>
+<p>Call it on Playfield.</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">P1</span><span class="p">:</span><span class="n">SetXSpline</span><span class="p">(</span>
+	<span class="n">which</span><span class="p">,</span>
+	<span class="n">column</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">all</span> <span class="n">columns</span><span class="p">),</span>
+	<span class="n">mod</span> <span class="n">percentage</span><span class="p">,</span>
+	<span class="n">offset</span> <span class="p">(</span><span class="n">distance</span> <span class="n">from</span> <span class="n">recep</span> <span class="k">in</span> <span class="n">beats</span><span class="p">)</span>
+	<span class="n">activation</span> <span class="n">speed</span> <span class="p">(</span><span class="n">set</span> <span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">instant</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>due to the way this is set up, it’s easy to apply large amounts of splines using a for loop.
+There is a limit of 40 splines per property per column.</p>
+
+<h1 id="how-to-reset-all">How to Reset all:</h1>
+
+<p>Apply mod “spline”..axis..”reset” or “spline”..col..axis..”reset”
+(axes are x,y,z,rotx,roty,rotz,size,stealth,skew)</p>
+
+<p>It activates immediately and instantly kills all splines in that column and axis</p>
+
+<h1 id="quirks-of-splines">Quirks of splines</h1>
+
+<p>Holds suck at splining in default ITG.
+I made a version of the hold renderer that plays much nicer with splines.
+To use, activate the mod “spiralholds”.</p>
+
+<p>If you activate 50% flip and 50% reverse, you can have much more direct control of the motion path
+of arrows using splines.</p>
+
+<p>splines have multiple different “join” types.
+To change the join type, use “spline”..axis..”type”, where axis is one of the aforementioned axes.</p>
+
+<ul>
+  <li>splinetype = 0
+    <ul>
+      <li>Default, linear splines. Connected with straight lines.</li>
+    </ul>
+  </li>
+  <li>splinetype &gt; 0 &amp;&amp; splinetype &lt; 100
+    <ul>
+      <li>Cosine connected splines.</li>
+    </ul>
+  </li>
+  <li>splinetype &gt; 100
+    <ul>
+      <li>Cubic splines (bezier joining the points. useful for smooth links using few points.)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Certain things will cause splines to truncate (the rest will be ignored after a point)</p>
+:ET

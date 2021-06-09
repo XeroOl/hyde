@@ -1,0 +1,23 @@
+I"­<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alias</span> <span class="p">{</span><span class="s1">'oldmodname'</span><span class="p">,</span> <span class="s1">'newmodname'</span><span class="p">}</span>
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">alias</code> function tells the game to treat two different mod names as the same mod name. The game will internally use the second provided name.</p>
+
+<p>Arguments:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oldmodname: string</code></td>
+      <td>The name of the mod to rename.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">newmodname: string</code></td>
+      <td>The new name of the mod.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example:</p>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alias</span> <span class="p">{</span><span class="s1">'confusionzoffset'</span><span class="p">,</span> <span class="s1">'confusionoffset'</span><span class="p">}</span>
+</code></pre></div></div>
+:ET

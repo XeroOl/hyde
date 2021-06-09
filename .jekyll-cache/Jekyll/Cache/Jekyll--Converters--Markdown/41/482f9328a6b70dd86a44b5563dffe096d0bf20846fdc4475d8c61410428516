@@ -1,0 +1,25 @@
+I"?<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setdefault</span> <span class="p">{</span><span class="n">percent</span><span class="p">,</span> <span class="n">mod</span><span class="p">}</span>
+</code></pre></div></div>
+<p>Sets the default value of the mod, which affects the initial value, and what value <a href="reset.md"><code class="language-plaintext highlighter-rouge">reset</code></a> will set the mod to.
+Unlike <a href="ease.md#set"><code class="language-plaintext highlighter-rouge">set</code></a>, this function cannot take a player number, and must apply to all players.</p>
+
+<p><code class="language-plaintext highlighter-rouge">setdefault</code> should be used to set the value of mods that are expected to stay on the
+entire file, even through <code class="language-plaintext highlighter-rouge">reset</code>s.</p>
+
+<p>Examples:</p>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- sets 5x for this modfile</span>
+<span class="n">setdefault</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'xmod'</span><span class="p">}</span>
+
+<span class="c1">-- sets a default value for a bunch of mods</span>
+<span class="n">setdefault</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'xmod'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'dizzyholds'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'stealthtype'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'stealthpastreceptors'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'reversetype'</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'modtimer'</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">setdefault</code> can also be used for user-created mods:</p>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- create a mod that adjusts the zoom of the background</span>
+<span class="n">definemod</span> <span class="p">{</span><span class="s1">'backgroundzoom'</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+	<span class="n">backgroundsprite</span><span class="p">:</span><span class="n">zoom</span><span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">end</span><span class="p">}</span>
+<span class="c1">-- by default, the background should have a default zoom of 100%</span>
+<span class="n">setdefault</span> <span class="p">{</span><span class="mi">100</span><span class="p">,</span> <span class="s1">'backgroundzoom'</span><span class="p">}</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,49 @@
+I"÷	<p>Here is a plot of each ease.
+eases/instant.png: <img src="" alt="eases/instant.png" />
+eases/inQuad.png: <img src="" alt="eases/inQuad.png" />
+eases/outQuad.png: <img src="" alt="eases/outQuad.png" />
+eases/inOutQuad.png: <img src="" alt="eases/inOutQuad.png" />
+eases/inCubic.png: <img src="" alt="eases/inCubic.png" />
+eases/outCubic.png: <img src="" alt="eases/outCubic.png" />
+eases/inOutCubic.png: <img src="" alt="eases/inOutCubic.png" />
+eases/inQuart.png: <img src="" alt="eases/inQuart.png" />
+eases/outQuart.png: <img src="" alt="eases/outQuart.png" />
+eases/inOutQuart.png: <img src="" alt="eases/inOutQuart.png" />
+eases/linear.png: <img src="" alt="eases/linear.png" />
+eases/inQuint.png: <img src="" alt="eases/inQuint.png" />
+eases/outQuint.png: <img src="" alt="eases/outQuint.png" />
+eases/inOutQuint.png: <img src="" alt="eases/inOutQuint.png" />
+eases/inExpo.png: <img src="" alt="eases/inExpo.png" />
+eases/outExpo.png: <img src="" alt="eases/outExpo.png" />
+eases/inOutExpo.png: <img src="" alt="eases/inOutExpo.png" />
+eases/inCirc.png: <img src="" alt="eases/inCirc.png" />
+eases/outCirc.png: <img src="" alt="eases/outCirc.png" />
+eases/inOutCirc.png: <img src="" alt="eases/inOutCirc.png" />
+eases/inBack.png: <img src="" alt="eases/inBack.png" />
+eases/outBack.png: <img src="" alt="eases/outBack.png" />
+eases/inOutBack.png: <img src="" alt="eases/inOutBack.png" />
+eases/inBounce.png: <img src="" alt="eases/inBounce.png" />
+eases/outBounce.png: <img src="" alt="eases/outBounce.png" />
+eases/inOutBounce.png: <img src="" alt="eases/inOutBounce.png" />
+eases/inSine.png: <img src="" alt="eases/inSine.png" />
+eases/outSine.png: <img src="" alt="eases/outSine.png" />
+eases/inOutSine.png: <img src="" alt="eases/inOutSine.png" />
+eases/inElastic.png: <img src="" alt="eases/inElastic.png" />
+eases/outElastic.png: <img src="" alt="eases/outElastic.png" />
+eases/inOutElastic.png: <img src="" alt="eases/inOutElastic.png" />
+eases/bounce.png: <img src="" alt="eases/bounce.png" />
+eases/tri.png: <img src="" alt="eases/tri.png" />
+eases/bell.png: <img src="" alt="eases/bell.png" />
+eases/pop.png: <img src="" alt="eases/pop.png" />
+eases/tap.png: <img src="" alt="eases/tap.png" />
+eases/spike.png: <img src="" alt="eases/spike.png" />
+eases/pulse.png: <img src="" alt="eases/pulse.png" />
+eases/inverse.png: <img src="" alt="eases/inverse.png" /></p>
+
+<p>TODO:
+popElastic[damping_factor][oscillation_speed]
+tapElastic[damping_factor][oscillation_speed]
+pulseElastic[damping_factor][oscillation_speed]
+impulse[damp]</p>
+
+:ET

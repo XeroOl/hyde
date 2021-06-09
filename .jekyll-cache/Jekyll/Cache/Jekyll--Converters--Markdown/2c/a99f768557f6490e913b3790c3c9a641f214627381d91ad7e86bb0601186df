@@ -1,0 +1,62 @@
+I"y)<p>Gradients are a feature of NotITG, and aren’t specific to the Mirin Template.</p>
+
+<h2 id="set-num-points">Set Num Points</h2>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Player</span><span class="p">:</span><span class="n">SetNumPathGradientPoints</span><span class="p">(</span><span class="n">column</span><span class="p">,</span><span class="n">amount</span><span class="p">)</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">SetNumArrowGradientPoints</span><span class="p">(</span><span class="n">column</span><span class="p">,</span><span class="n">amount</span><span class="p">)</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">SetNumStealthGradientPoints</span><span class="p">(</span><span class="n">column</span><span class="p">,</span><span class="n">amount</span><span class="p">)</span>
+</code></pre></div></div>
+<p>These tell the game how many points/stops there are in the gradient. (Much like Photoshop gradients where you can set a color at each point)</p>
+
+<h2 id="set-gradient-points">Set Gradient Points</h2>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Player</span><span class="p">:</span><span class="n">SetPathGradientPoint</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">column</span><span class="p">,</span><span class="n">where</span><span class="p">)</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">SetArrowGradientPoint</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">column</span><span class="p">,</span><span class="n">where</span><span class="p">)</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">SetStealthGradientPoint</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">column</span><span class="p">,</span><span class="n">where</span><span class="p">)</span>
+</code></pre></div></div>
+<p>These position those points on the column provided. (1 = 1 arrow -or- 64 pixels)</p>
+
+<h3 id="example">Example:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">P1</span><span class="p">:</span><span class="n">SetArrowGradientPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">-- This would set the first point in the gradient 1 arrow (64 pixels) down from the receptors on column 0, which is the left column, on Player 1</span>
+<span class="c1">-- Keep in mind that column and point numbers start at 0 and not 1. (I'm looking at you, Lua.)</span>
+</code></pre></div></div>
+
+<h2 id="set-gradient-color">Set Gradient Color</h2>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Player</span><span class="p">:</span><span class="n">SetPathGradientColor</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">column</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">column</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">SetStealthGradientColor</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="n">column</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div></div>
+<p>These will set the color of the point provided.</p>
+<h3 id="example-1">Example:</h3>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">P1</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">P1</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">P1</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">P1</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1">-- This arrow gradient has 4 points in it starting from 0. Point 0 will be colored Red,</span>
+<span class="c1">-- then point 1 will be colored Green, then point 2 will </span>
+<span class="c1">-- be colored Blue, and the final point will be a fade on the alpha channel</span>
+</code></pre></div></div>
+
+<h2 id="example-2">Example</h2>
+<p>To put it all together, here is some example code…</p>
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">pn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span> <span class="k">do</span> <span class="c1">-- first, we run a loop so we can grab players 1 and 2</span>
+	<span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Plr</span><span class="p">(</span><span class="n">pn</span><span class="p">)</span> <span class="c1">-- grab the players here with this function (a means both players in this context)</span>
+	<span class="k">if</span> <span class="n">a</span> <span class="k">then</span> <span class="c1">-- if they exist do a thing</span>
+		<span class="k">for</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">3</span> <span class="k">do</span> <span class="c1">-- iterate through all the columns</span>
+			<span class="n">a</span><span class="p">:</span><span class="n">SetNumArrowGradientPoints</span><span class="p">(</span><span class="n">col</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>	<span class="c1">-- for each column, set the number of points to 4</span>
+
+			<span class="n">a</span><span class="p">:</span><span class="n">SetArrowGradientPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">-- set their points</span>
+			<span class="n">a</span><span class="p">:</span><span class="n">SetArrowGradientPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+			<span class="n">a</span><span class="p">:</span><span class="n">SetArrowGradientPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+			<span class="n">a</span><span class="p">:</span><span class="n">SetArrowGradientPoint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+			<span class="n">a</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>	<span class="c1">-- set their colors and shiet</span>
+			<span class="n">a</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+			<span class="n">a</span><span class="p">:</span><span class="n">SetArrowGradientColor</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>You can swap out “Arrow” with “Path” so it affects the arrowpaths or “Stealth” so it only affects the notes when
+stealth is applied
+And there you go! You can now gradient!</p>
+:ET

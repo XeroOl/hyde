@@ -1,0 +1,35 @@
+I"x
+<p>ActorFrameTexture (AFT) is an Actor which captures the layers beneath it (drawn before it), and puts the result into a texture.</p>
+
+<p>Example of setting up an AFT layer:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Mods</span> <span class="na">LoadCommand =</span> <span class="s">"%xero(function(self)
+	-- judgment / combo proxies
+	for pn = 1, 2 do
+		setupJudgeProxy(PJ[pn], P[pn]:GetChild('Judgment'), pn)
+		setupJudgeProxy(PC[pn], P[pn]:GetChild('Combo'), pn)
+	end
+	-- player proxies
+	for pn = 1, #PP do
+		PP[pn]:SetTarget(P[pn])
+		P[pn]:hidden(1)
+	end
+	-- your code goes here here:
+	sprite(mysprite) -- set up the sprite
+	aft(myaft) -- set up the aft
+	mysprite:SetTexture(myaft:GetTexture()) -- set up the texture
+	
+end)"</span>
+<span class="na">Type =</span> <span class="s">"ActorFrame"</span>
+<span class="nt">&gt;&lt;children&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"Sprite"</span> <span class="na">Name =</span> <span class="s">"mysprite"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"ActorProxy"</span> <span class="na">Name =</span> <span class="s">"PC[1]"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"ActorProxy"</span> <span class="na">Name =</span> <span class="s">"PC[2]"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"ActorProxy"</span> <span class="na">Name =</span> <span class="s">"PJ[1]"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"ActorProxy"</span> <span class="na">Name =</span> <span class="s">"PJ[2]"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"ActorProxy"</span> <span class="na">Name =</span> <span class="s">"PP[1]"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"ActorProxy"</span> <span class="na">Name =</span> <span class="s">"PP[2]"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;Layer</span> <span class="na">Type =</span> <span class="s">"ActorFrameTexture"</span> <span class="na">Name =</span> <span class="s">"myaft"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/children&gt;&lt;/Mods&gt;</span>
+</code></pre></div></div>
+<p>From here, try moving / rotating mysprite, or place the AFT and Sprite at different positions in the scene.</p>
+:ET
