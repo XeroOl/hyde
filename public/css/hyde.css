@@ -58,8 +58,9 @@ html {
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
-  overflow: scroll;
-}
+  overflow-y: auto;
+ }
+
 @media (min-width: 48em) {
   .sidebar {
     position: fixed;
@@ -129,7 +130,7 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 48em) {
   .content {
-    max-width: 38rem;
+    max-width: 48rem;
     margin-left: 20rem;
     margin-right: 2rem;
   }

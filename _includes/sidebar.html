@@ -6,12 +6,14 @@
           {{ site.title }}
         </a>
       </h1>
-      <p class="lead">{{ site.description }}</p>
+      {% unless page.title == "Documentation" or page.layout == "doc" %}
+        <p class="lead">{{ site.description }}</p>
+      {% endunless %}
     </div>
 
     <nav class="sidebar-nav">
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
-
+      {{ show_docs }}
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
@@ -25,7 +27,7 @@
             {% if node.title == "Documentation" and (page.title == "Documentation" or page.layout == "doc") %}
               {% for node in pages_list %}
                 {% if node.layout == "doc" %}
-                  <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">* {{ node.title }}</a>
+                  <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">&raquo; &nbsp; {{ node.title }}</a>
                 {% endif %}
               {% endfor %}
             {% endif %}

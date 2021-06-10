@@ -1,5 +1,7 @@
-[Back](index)
-# Choosing a Template
+---
+layout: doc
+title: Choosing a Template
+---
 ## Mod Beginners
 When you're starting out with modding, it's important to use a template. Templates allow you to easily apply mods to the players, and schedule different things to happen at different times throughout the song. Any template will have the basic features you need to get started. I recommend choosing a template quickly to get started modding faster, instead of procrastinating by comparing templates forever. Just choose anything, and get started!
 
