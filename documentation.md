@@ -11,7 +11,7 @@ Choosing a template
 <br>
 <div style="display:flex">
 <div style="flex:50%" markdown="1">
-* [How to set up the template](Getting Started)
+* [How to set up the template](getting-started)
 * [setdefault](docs/setdefault)
 * [set](docs/set)
 * [ease](docs/ease)
