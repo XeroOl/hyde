@@ -3,7 +3,7 @@ markdown: kramdown
 # Setup
 title:            Mirin Template
 tagline:          'A NotITG Template'
-description:      'A <a href="https://notitg.heysora.net" target="_blank">NotITG</a> template that features a prominent ease system with simple syntax. Made by <a href="https://github.com/XeroOl">XeroOl</a>.'
+description:      'A <a href="https://notitg.heysora.net" target="_blank">NotITG</a> template that features a powerful ease system. Made by <a href="https://github.com/XeroOl">XeroOl</a>.'
 url:              http://xerool.github.io
 baseurl:          /hyde/
 
