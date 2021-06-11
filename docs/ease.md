@@ -13,7 +13,7 @@ Arguments:
 | -------------- | ---------- |
 | `beat: number` | The song beat when the mod begins to apply. |
 | `len: number` | The amount of beats before the ease is complete. |
-| [`ease_fn: function`](eases.md) | The way to approach the target value. |
+| [`ease_fn: function`](eases) | The way to approach the target value. |
 | `percent: number` | The target amount to set the mod to. |
 | `mod: string` | The mod to apply. |
 
@@ -32,7 +32,7 @@ ease {
 	100, 'bumpy',
 }
 ```
-`ease` can also be [player specific](players.md).
+`ease` can also be [player specific](players).
 
 # Add
 ```lua
@@ -45,7 +45,7 @@ Arguments:
 | -------------- | ---------- |
 | `beat: number` | The song beat when the mod begins to apply. |
 | `len: number` | The amount of beats before the ease is complete. |
-| [`ease_fn: function`](eases.md) | The way to approach the target value. |
+| [`ease_fn: function`](eases) | The way to approach the target value. |
 | `percent: number` | The amount to add to the mod. |
 | `mod: string` | The mod to apply. |
 
@@ -54,4 +54,4 @@ Example:
 add {1, 2, inExpo, 360, 'rotationz'}
 ```
 
-`add` can also be [player specific](players.md).
+`add` can also be [player specific](players).

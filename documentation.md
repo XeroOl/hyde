@@ -1,13 +1,14 @@
 ---
 layout: page
 title: Documentation
+children: doc
 ---
 
 [Index](docs/globals) - in progress
 <br>
 Choosing a template
 <br>
-[Getting Started](Getting Started)
+[Getting Started](getting-started)
 <br>
 <div style="display:flex">
 <div style="flex:50%" markdown="1">
@@ -16,7 +17,6 @@ Choosing a template
 * [set](docs/set)
 * [ease](docs/ease)
 * [add](docs/ease#add)
-* for loop
 * [actors](docs/actors)
 * [definemod](docs/definemod)
 * [reset](docs/reset)
@@ -26,18 +26,19 @@ Choosing a template
 </div>
 <div style="flex:50%" markdown="1">
 * [extra players](docs/players)
-* mode='end'
 * [flip](docs/flip)
 * [get](docs/get)
 * [func](docs/func)
 * [function eases](docs/func#func_for_function_eases)
 * [poptions](docs/func#poptions)
-* [aft](docs/aft)
-* shaders
 * [list of mods](docs/mods)
 * [list of ease functions](docs/eases)
 </div>
 </div>
+* for loop
+* mode='end'
+* shaders
+* [aft](docs/aft)
 Bonus:
 * [learn Lua](https://www.lua.org/manual/5.1/)
 * [gradients](docs/gradients)

@@ -4,13 +4,13 @@ title: Index
 ---
 
 # Mod Functions
-### [add](ease.md#add)
-### [alias](alias.md)
-### [aux](aux.md)
-### [ease](ease.md)
-### [func](func.md)
-### [node](aux.md#node)
-### [set](set.md)
+### [add](ease#add)
+### [alias](alias)
+### [aux](aux)
+### [ease](ease)
+### [func](func)
+### [node](aux#node)
+### [set](set)
 
 # Proxy Actors
 ### PC

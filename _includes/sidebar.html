@@ -1,12 +1,12 @@
 <div class="sidebar">
   <div class="container">
     <div class="sidebar-about">
-      <h1>
-        <a href="{{ site.baseurl }}">
-          {{ site.title }}
-        </a>
-      </h1>
       {% unless page.title == "Documentation" or page.layout == "doc" %}
+        <h1>
+          <a href="{{ site.baseurl }}">
+            {{ site.title }}
+          </a>
+        </h1>
         <p class="lead">{{ site.description }}</p>
       {% endunless %}
     </div>
@@ -24,24 +24,34 @@
         {% if node.title != null %}
           {% if node.layout == "page" %}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">{{ node.title }}</a>
-            {% if node.title == "Documentation" and (page.title == "Documentation" or page.layout == "doc") %}
+
+            <!-- Children for Documentation -->
+            {% if node.children == "doc" and (page.children == "doc" or page.layout == "doc") %}
               {% for node in pages_list %}
                 {% if node.layout == "doc" %}
                   <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">&raquo; &nbsp; {{ node.title }}</a>
                 {% endif %}
               {% endfor %}
             {% endif %}
+
+            <!-- Children for Blog -->
+            {% if node.children == "post" and (page.children == "post" or page.layout == "post") %}
+              {% for node in site.posts %}
+                <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">&raquo; &nbsp; {{ node.title }}</a>
+              {% endfor %}
+            {% endif %}
+
           {% endif %}
         {% endif %}
       {% endfor %}
 
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
       <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a>
       <a class="sidebar-nav-item" href="{{ site.discord.url }}">Discord</a>
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
       <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
 
     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
-    <p>Made with the <a href="https://hyde.getpoole.com">Hyde theme</a></p>
+    <p>Built with the <a href="https://hyde.getpoole.com">Hyde theme</a></p>
   </div>
 </div>
