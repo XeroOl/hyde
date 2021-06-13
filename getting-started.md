@@ -11,7 +11,7 @@ Table of Contents
 4. [Check your work](#check-your-work)
 5. [Default Mods](#default-mods)
 6. [Setting Mods](#setting-mods)
-7. [Smooth Transitions](smooth-transitions)
+7. [Smooth Transitions](#smooth-transitions)
 8. [Conclusion](#conclusion)
 
 <a name="install-notitg"/>
@@ -24,21 +24,21 @@ If everything went right, you should be able to start up the game by running the
 <a name="download-the-template"/>
 ## Download the Template
 To start, you need to find the folder that NotITG is installed in.
-Download the [Mirin Template Code from GitHub](http://github.com/xerool/notitg-mirin/archive/master.zip) and unzip it into a song pack in your `Songs` folder.
-When you're done, the structure should be something like this (except `My Song Pack` would be filled in with whatever information you want):
+Download the [Mirin Template Code from GitHub]({{ site.github.repo }}/archive/v{{ site.version }}.zip) and unzip it into a song pack in your `Songs` folder.
+When you're done, the structure should be something like this: (instead of `My Song Pack` you can name the pack whatever you want):
 ```
 NotITG
 └── Songs
     └── My Song Pack
         └── notitg-mirin-master
             ├── lua
-            ├── readme.md
+            ├── readme
             ├── Song.ogg
             ├── Song.sm
             └── template
 ```
 
-Now, if everything went right, you can launch the game and find the "Mirin Template" song in the song wheel.
+Now, if everything went right, you should be able to launch the game and find the "Mirin Template" song in the song wheel.
 
 <a name="song-setup"/>
 ## Setting up the Song and .sm
@@ -51,14 +51,14 @@ Inside your `.sm`, you need to set `#FGCHANGES:` to the following:
 #FGCHANGES:0.000=template/main.xml=1.000=0=0=1=====,
 ;
 ```
-Now you're ready to [move on to modding](#Default Mods).
+Now you're ready to [move on to modding](#default-mods).
 
 ### Adapting the provided Song.sm
 First, convert your song into the `ogg` audio format, and replace the `Song.ogg` file with your own.
-Next, open `Song.sm` in a text editor. I recommend using the Notepad++ editor, but any text editor works. With Notepad++, you can right click on the file, and choose "Open With Notepad++".
+Next, open `Song.sm` in a text editor. I recommend using the [Notepad++](https://notepad-plus-plus.org) editor, but any text editor works. Right click on the file, and choose "Open With Notepad++" to edit the file.
 Inside, there are a couple of things to change:
 * `#TITLE:` should be changed from "Mirin Template" to the name of your song
-* `#ARTIST:` should be changed to the artist
+* `#ARTIST:` should be changed to the artist of the song
 * `#OFFSET:` needs to be set to the offset of your song
 * `#BPMS:` needs to be set to `0.000=`, and then the BPM of your song. (The provided Song.ogg is 129.948bpm)
 * On line 32 of `Song.sm`, there's a line that just has a `:` symbol. Add your username before this colon
@@ -95,13 +95,13 @@ setdefault {2, 'xmod', 100, 'overhead', 100, 'dizzyholds', 100, 'modtimer'}
 ```
 This sets the rate to `2x`, sets the perpective to overhead, and does a couple of other things.
 The `setdefault` function takes in pairs of numbers and mods, and sets the mod to that amount.
-More information about `setdefault` can be found on [its documentation page](docs/setdefault.md).
+More information about `setdefault` can be found on [its documentation page](docs/setdefault).
 
 <a name="setting-mods"/>
 ## Setting Mods
-Now that you've set some base mods, you can now schedule mods to change at different beats of the song. To do that, you can use the [set function](docs/set.md).
+Now that you've set some base mods, you can now schedule mods to change at different beats of the song. To do that, you can use the [set function](docs/set).
 The `set` function works just like `setdefault`, except for an extra beat number at the beginning.
-Try choosing a mod from [the list](docs/mods.md), and applying it with set.
+Try choosing a mod from [the list](docs/mods), and applying it with set.
 Here's an example that turns `invert` on at beat 4, and turns it back off at beat 8.
 ```lua
 -- on beat 4, set 100% invert
@@ -110,12 +110,12 @@ set {4, 100, 'invert'}
 -- on beat 8, set 0% invert
 set {8, 0, 'invert'}
 ```
-This example used invert, but `set` works with any mod. You can try changing out `invert` for another mod from [the list](docs/mods.md), or find more information can be found on [set's documentation page](docs/set.md).
+This example used invert, but `set` works with any mod. You can try changing out `invert` for another mod from [the list](docs/mods), or find more information can be found on [set's documentation page](docs/set).
 
 <a name="smooth-transitions"/>
 ## Smooth Transitions
 If you tried the previous example, you'll notice that there's no animations; the mods instantly turn on and off. Sometimes that's okay, but lots of the time, you'll want to choose an animation to use.
-That's where the [ease function](docs/ease.md) comes in.
+That's where the [ease function](docs/ease) comes in.
 The ease function works like set, except it needs two more arguments: a length, and an ease function.
 ```lua
 -- ease {beat, length, ease, percent, mod}
@@ -128,9 +128,9 @@ ease {12, 2, outExpo, 100, 'invert'}
 -- on beat 16, for 2 beats, use the `outExpo` animation to set 0% invert
 ease {12, 2, outExpo, 0, 'invert'}
 ```
-This example used a length of `2`, and the `outExpo` ease, but you can try changing the ease to another one from [the ease list](docs/eases.md), and you can change the length.
-You can find more information about `ease` on [its documentation page](/docs/ease.md).
+This example used a length of `2`, and the `outExpo` ease, but you can try changing the ease to another one from [the ease list](docs/eases), and you can change the length.
+You can find more information about `ease` on [its documentation page](/docs/ease).
 
 <a name="conclusion"/>
 ## Conclusion
-Now you have everything you need to begin modding. The [main page](/index.md) has links to other functions you can read about.
+Now you have everything you need to begin modding. The [main page](/index) has links to other functions you can read about.

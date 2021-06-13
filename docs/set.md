@@ -29,4 +29,4 @@ set {
 	100, 'bumpy',
 }
 ```
-The `set` function can also be [player specific](players.md).
+The `set` function can also be [player specific](players).

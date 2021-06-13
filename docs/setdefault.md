@@ -5,7 +5,7 @@ title: SetDefault
 ```lua
 setdefault {percent, mod}
 ```
-Sets the default value of the mod, which affects the initial value, and what value [`reset`](reset.md) will set the mod to.
+Sets the default value of the mod, which affects the initial value, and what value [`reset`](reset) will set the mod to.
 Unlike [`set`](ease.md#set), this function cannot take a player number, and must apply to all players.
 
 `setdefault` should be used to set the value of mods that are expected to stay on the

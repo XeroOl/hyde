@@ -40,4 +40,4 @@ P3:hidden(0)
 ```
 
 ## How to set up extra player proxies
-I'm too lazy to actually look at mods.xml and figure out how it works, so do it yourself, thanks in advance.
+The provided default code in `lua/mods.xml` will set up every proxy in the `PP` table to proxy the players. To set up extra player proxies, just add more `PP` layers.

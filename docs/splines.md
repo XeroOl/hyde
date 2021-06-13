@@ -57,10 +57,10 @@ splines have multiple different "join" types.
 To change the join type, use "spline"..axis.."type", where axis is one of the aforementioned axes.
 
 * splinetype = 0
-  * Default, linear splines. Connected with straight lines.
+	* Default, linear splines. Connected with straight lines.
 * splinetype > 0 && splinetype < 100
-  * Cosine connected splines.
+	* Cosine connected splines.
 * splinetype > 100
-  * Cubic splines (bezier joining the points. useful for smooth links using few points.)
+	* Cubic splines (bezier joining the points. useful for smooth links using few points.)
 
 Certain things will cause splines to truncate (the rest will be ignored after a point)

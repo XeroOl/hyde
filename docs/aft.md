@@ -4,6 +4,8 @@ title: ActorFrameTextures
 ---
 ActorFrameTexture (AFT) is an Actor which captures the layers beneath it (drawn before it), and puts the result into a texture.
 
+To set up the aft, the Mirin Template provides the functions `aft` and `sprite`, which set up an ActorFrameTexture and a Sprite respectively.
+
 Example of setting up an AFT layer:
 ```xml
 <Mods LoadCommand = "%xero(function(self)

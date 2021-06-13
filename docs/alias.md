@@ -5,7 +5,7 @@ title: Alias
 ```lua
 alias {'oldmodname', 'newmodname'}
 ```
-The `alias` function tells the game to treat two different mod names as the same mod name. The game will internally use the second provided name.
+The `alias` function tells the game to replace all occurances of modstring `oldmodname` with `newmodname`. It affects anywhere that modstrings are used, including `ease`, `set`, `add`, `definemod`, and anywhere else mod names are used. The game will internally use the second provided name.
 
 Arguments:
 

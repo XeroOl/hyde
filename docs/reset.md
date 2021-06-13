@@ -9,7 +9,7 @@ reset {beat, exclude = {mod1, mod2, mod3, ...}}
 ```
 It resets all mods to their default value at the specified beat. If `exclude` is provided, it will not reset any of the mods in the list.
 
-See the [setdefault](setdefault.md) page for more information on how to change the default value of a mod.
+See the [setdefault](setdefault) page for more information on how to change the default value of a mod.
 
 Examples:
 ```lua

@@ -29,7 +29,9 @@
             {% if node.children == "doc" and (page.children == "doc" or page.layout == "doc") %}
               {% for node in pages_list %}
                 {% if node.layout == "doc" %}
-                  <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">&raquo; &nbsp; {{ node.title }}</a>
+                <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">
+                  <span class="indented">{{ node.title }}</span>
+                </a>
                 {% endif %}
               {% endfor %}
             {% endif %}
@@ -37,7 +39,9 @@
             <!-- Children for Blog -->
             {% if node.children == "post" and (page.children == "post" or page.layout == "post") %}
               {% for node in site.posts %}
-                <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">&raquo; &nbsp; {{ node.title }}</a>
+                <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">
+                  <span class="indented">{{ node.title }}<span>
+                </a>
               {% endfor %}
             {% endif %}
 
