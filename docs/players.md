@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Player Specific Mods
+title: 1.4 - Advanced Parameters
+section: 1
+incomplete: true
 ---
 * This section is not done. Ask for @XeroOl in the [NotITG Discord](https://uksrt.heysora.net/discord).
 `set`, `ease`, and `add` all can take in an optional argument called `plr`.
@@ -41,3 +43,11 @@ P3:hidden(0)
 
 ## How to set up extra player proxies
 The provided default code in `lua/mods.xml` will set up every proxy in the `PP` table to proxy the players. To set up extra player proxies, just add more `PP` layers.
+# flip
+```lua
+flip(eas)
+```
+The flip function takes in an ease and returns a flipped version of that ease.
+
+Example usage:
+```lua

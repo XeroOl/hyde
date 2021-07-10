@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Set
+title: 1.1 - Set
+section: 1
+incomplete: true
 ---
 ```lua
 set {beat, percent, mod}

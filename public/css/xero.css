@@ -1,3 +1,7 @@
+.incomplete:after {
+	content:" \26A0";
+}
+
 .active .indented:before {
 	content:"\00BB";
 	position:absolute;
@@ -5,4 +9,12 @@
 }
 .indented {
 	margin-left: 40px;
+}
+.active .sectionheader:before {
+	content:"\00BB";
+	position:absolute;
+	margin-left: -20px;
+}
+.sectionheader {
+	margin-left: 20px;
 }

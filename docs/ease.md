@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Ease
+title: 1.2 - Ease
+section: 1
+incomplete: true
 ---
 ```lua
 ease {beat, len, ease_fn, percent, mod}

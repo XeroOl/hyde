@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Alias
+title: 5.4 - Alias
+section: 5
+incomplete: true
 ---
 ```lua
 alias {'oldmodname', 'newmodname'}

@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Defining Mods
+title: 3.1 - Defining Mods
+section: 3
+incomplete: true
 ---
 ```lua
 definemod {modname, function(percent)

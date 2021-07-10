@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: SetDefault
+title: 5.2 - SetDefault
+section: 5
+incomplete: true
 ---
 ```lua
 setdefault {percent, mod}

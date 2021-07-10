@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Actors
+title: 2.1 - Actors
+section: 2
+incomplete: true
 ---
 TODO
 * XML vs Lua

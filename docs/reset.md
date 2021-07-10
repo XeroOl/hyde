@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Reset
+title: 5.1 - Reset
+section: 5
+incomplete: true
 ---
 ```lua
 reset {beat}

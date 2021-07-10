@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Func
+title: 3.2 - Func
+section: 3
+incomplete: true
 ---
 ```lua
 -- Scheduled Function:

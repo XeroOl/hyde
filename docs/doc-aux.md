@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Aux
+title: 6.1 - Aux
+section: 6
+incomplete: true
 ---
 ```lua
 aux {modname}

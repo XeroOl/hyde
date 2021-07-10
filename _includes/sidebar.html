@@ -19,7 +19,7 @@
         `layout: page` in the front-matter. See readme for usage.
       {% endcomment %}
 
-      {% assign pages_list = site.pages %}
+      {% assign pages_list = site.pages | sort: "title" %}
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.layout == "page" %}
@@ -28,9 +28,9 @@
             <!-- Children for Documentation -->
             {% if node.children == "doc" and (page.children == "doc" or page.layout == "doc") %}
               {% for node in pages_list %}
-                {% if node.layout == "doc" %}
+                {% if node.layout == "doc" and (node.section == page.section or node.sectionheader) %}
                 <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">
-                  <span class="indented">{{ node.title }}</span>
+                  <span class="{% if node.sectionheader %}sectionheader {% endif %}{% if node.incomplete %}incomplete {% endif %}indented">{{ node.title }}</span>
                 </a>
                 {% endif %}
               {% endfor %}
