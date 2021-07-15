@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 1.2 - Ease
+title: Ease
 section: 1
+subsection: 2
 incomplete: true
 ---
 ```lua

@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 3.1 - Defining Mods
+title: Defining Mods
 section: 3
+subsection: 1
 incomplete: true
 ---
 ```lua

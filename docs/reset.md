@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 5.1 - Reset
+title: Reset
 section: 5
+subsection: 1
 incomplete: true
 ---
 ```lua

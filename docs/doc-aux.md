@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 6.1 - Aux
+title: Aux
 section: 6
+subsection: 1
 incomplete: true
 ---
 ```lua

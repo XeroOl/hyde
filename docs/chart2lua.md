@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: 4.4 - Chart2Lua
+title: Chart2Lua
 section: 4
+subsection: 4
 incomplete: true
 ---
+Placeholder text

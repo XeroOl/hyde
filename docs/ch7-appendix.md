@@ -1,8 +1,7 @@
 ---
 layout: doc
-title: 7 - Appendix
+title: Appendix
 section: 7
-sectionheader: true
-incomplete: true
+subsection: 0
 ---
-body
+The appendix section includes lists of things for easy reference.

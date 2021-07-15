@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: page
 title: Choosing a Template
 ---
 ## Mod Beginners

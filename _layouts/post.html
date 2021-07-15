@@ -1,9 +1,13 @@
 ---
 layout: default
 ---
-
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
+  <h1 class="{% if page.incomplete %}incomplete {% endif %}post-title">{{ page.title }}</h1>
+  {% if page.author %}
   <span class="post-date">{{ page.author }} - {{ page.date | date_to_string }}</span>
+  {% endif %}
+  {% if page.incomplete %}
+    <p>Disclaimer: This page is incomplete. Go ping @chocobogamer on Discord repeatedly.</p>
+  {% endif %}
   {{ content }}
 </div>

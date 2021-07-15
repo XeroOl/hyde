@@ -1,8 +1,7 @@
 ---
 layout: doc
-title: 4 - Lua Programming
+title: Lua Programming
 section: 4
-sectionheader: true
-incomplete: true
+subsection: 0
 ---
-body
+This section covers some basic Lua programming fundamentals, and how Lua's features can be used to make modding easier.

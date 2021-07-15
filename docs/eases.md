@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: Ease list
+section: 7
+subsection: 2
 ---
 
 * bell

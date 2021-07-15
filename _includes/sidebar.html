@@ -1,61 +1,49 @@
 <div class="sidebar">
-  <div class="container">
-    <div class="sidebar-about">
-      {% unless page.title == "Documentation" or page.layout == "doc" %}
-        <h1>
-          <a href="{{ site.baseurl }}">
-            {{ site.title }}
-          </a>
-        </h1>
-        <p class="lead">{{ site.description }}</p>
-      {% endunless %}
-    </div>
+    <div class="container">
+        <div class="sidebar-about">
+            {% unless page.title == "Documentation" or page.layout == "doc" %}
+                <h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
+                <p class="lead">{{ site.description }}</p>
+            {% endunless %}
+        </div>
+        <nav class="sidebar-nav">
+            <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+            {% assign pages_list = site.pages | where: "layout", "page" | sort: "title" %}
+            {% for item in pages_list %}
+                <a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{ item.url | prepend:site.baseurl }}">{{ item.title }}</a>
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
-      {{ show_docs }}
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = site.pages | sort: "title" %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">{{ node.title }}</a>
-
-            <!-- Children for Documentation -->
-            {% if node.children == "doc" and (page.children == "doc" or page.layout == "doc") %}
-              {% for node in pages_list %}
-                {% if node.layout == "doc" and (node.section == page.section or node.sectionheader) %}
-                <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">
-                  <span class="{% if node.sectionheader %}sectionheader {% endif %}{% if node.incomplete %}incomplete {% endif %}indented">{{ node.title }}</span>
-                </a>
+                <!-- Children for Documentation -->
+                {% if item.children == "doc" and (page.children == "doc" or page.layout == "doc") %}
+                    {% assign docs_list = site.pages | where: "layout", "doc" | sort: "subsection" | sort: "section" %}
+                    {% for doc in docs_list %}
+                        {% if doc.section == page.section or doc.subsection == 0 %}
+                            <a class="sidebar-nav-item{% if page.url == doc.url %} active{% endif %}" href="{{ doc.url | prepend:site.baseurl }}">
+                                <span class="{% if doc.subsection == 0 %}sectionheader {% endif %}indented">
+                                    {{ doc.section }}{% if doc.subsection != 0 %}.{{ doc.subsection }}{% endif %} - {{ doc.title }}
+                                </span>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
-              {% endfor %}
-            {% endif %}
 
-            <!-- Children for Blog -->
-            {% if node.children == "post" and (page.children == "post" or page.layout == "post") %}
-              {% for node in site.posts %}
-                <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend:site.baseurl }}">
-                  <span class="indented">{{ node.title }}<span>
-                </a>
-              {% endfor %}
-            {% endif %}
+                <!-- Children for Blog -->
+                {% if item.children == "post" and (page.children == "post" or page.layout == "post") %}
+                    {% assign post_list = site.posts | sort: "date" %}
+                    {% for item in post_list %}
+                        <a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{ item.url | prepend:site.baseurl }}">
+                            <span class="indented">{{ item.title }}<span>
+                        </a>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
 
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+            <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a>
+            <a class="sidebar-nav-item" href="{{ site.discord.url }}">Discord</a>
+            <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
+            <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
+        </nav>
 
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a>
-      <a class="sidebar-nav-item" href="{{ site.discord.url }}">Discord</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
-    </nav>
-
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
-    <p>Built with the <a href="https://hyde.getpoole.com">Hyde theme</a></p>
-  </div>
+        <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+        <p>Built with the <a href="https://hyde.getpoole.com">Hyde theme</a></p>
+    </div>
 </div>

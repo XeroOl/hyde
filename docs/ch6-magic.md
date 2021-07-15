@@ -1,8 +1,7 @@
 ---
 layout: doc
-title: 6 - Black Magic
+title: Magic
 section: 6
-sectionheader: true
-incomplete: true
+subsection: 0
 ---
-body
+This section covers the things in the Mirin Template that are at the top of the difficulty curve. These features are difficult to learn, and only useful in specific niche situations.

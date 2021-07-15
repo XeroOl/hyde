@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: Gradients
+section: 8
+subsection: 4
 ---
 Gradients are a feature of NotITG, and aren't specific to the Mirin Template.
 

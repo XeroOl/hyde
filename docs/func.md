@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 3.2 - Func
+title: Func
 section: 3
+subsection: 2
 incomplete: true
 ---
 ```lua

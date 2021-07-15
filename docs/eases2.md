@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: Ease list
+section: 8
+subsection: 999
 ---
 Here is a plot of each ease.
 eases/instant.png: ![eases/instant.png]()

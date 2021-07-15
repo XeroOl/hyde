@@ -1,8 +1,7 @@
 ---
 layout: doc
-title: 2 - Actors in NotITG
+title: Actors in NotITG
 section: 2
-sectionheader: true
-incomplete: true
+subsection: 0
 ---
-body
+Actors are used to add images and other content to the scene. This section covers the syntax for creating different types of actors in a mod file.

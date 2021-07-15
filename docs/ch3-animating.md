@@ -1,8 +1,7 @@
 ---
 layout: doc
-title: 3 - Animating your Actors
+title: Animating your Actors
 section: 3
-sectionheader: true
-incomplete: true
+subsection: 0
 ---
-body
+This section covers how to manipulate actors and make them move.

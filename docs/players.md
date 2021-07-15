@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 1.4 - Advanced Parameters
+title: Advanced Parameters
 section: 1
+subsection: 4
 incomplete: true
 ---
 * This section is not done. Ask for @XeroOl in the [NotITG Discord](https://uksrt.heysora.net/discord).

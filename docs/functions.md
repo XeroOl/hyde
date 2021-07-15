@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: 4.3 - Functions
+title: Functions
 section: 4
+subsection: 3
 incomplete: true
 ---
+placeholder

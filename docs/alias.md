@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 5.4 - Alias
+title: Alias
 section: 5
+subsection: 4
 incomplete: true
 ---
 ```lua

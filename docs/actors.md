@@ -1,7 +1,8 @@
 ---
 layout: doc
-title: 2.1 - Actors
+title: Actors
 section: 2
+subsection: 1
 incomplete: true
 ---
 TODO

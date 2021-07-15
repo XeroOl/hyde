@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: Mod List
+section: 7
+subsection: 5
 ---
 Here is a list of mods that are useful for making mod files. There may be some missing mods or duplicates or aliases, but the list is relatively complete.
 ```

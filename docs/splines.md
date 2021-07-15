@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: Splines
+section: 8
+subsection: 1
 ---
 Splines are a feature of NotITG, and aren't specific to the Mirin Template.
 

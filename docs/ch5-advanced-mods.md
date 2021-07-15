@@ -1,8 +1,7 @@
 ---
 layout: doc
-title: 5 - Advanced Modifiers
+title: Advanced Modifiers
 section: 5
-sectionheader: true
-incomplete: true
+subsection: 0
 ---
-body
+This section covers some miscellaneous extra functions that might come in handy when creating some more complicated effects.

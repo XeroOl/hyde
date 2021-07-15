@@ -1,6 +1,8 @@
 ---
 layout: doc
-title: Index
+title: Every Variable
+section: 7
+subsection: 3
 ---
 
 # Mod Functions

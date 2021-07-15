@@ -1,6 +1,8 @@
 ---
 layout: doc
 title: ActorFrameTextures
+section: 8
+subsection: 1
 ---
 ActorFrameTexture (AFT) is an Actor which captures the layers beneath it (drawn before it), and puts the result into a texture.
 

@@ -1,4 +1,22 @@
 ---
 layout: post
 ---
-{{content}}
+{{ content }}
+{% assign pages_list = site.pages | where: "section", page.section | sort: "subsection" %}
+{% if page.subsection == 0 %}
+    {% for doc in pages_list %}
+        {% if doc.subsection != 0 %}
+            <div class="post">
+                <h1 class="{% if page.incomplete %}incomplete {% endif %}post-title">
+                    <a href="{{ doc.url | prepend:site.baseurl }}">{{ doc.title }}</a>
+                </h1>
+                {{ doc.content | markdownify }}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {% assign chapter = pages_list | where: "subsection", 0 | first %}
+    <div class="read-more-button">
+        <a href="{{ chapter.url | prepend:site.baseurl }}">Read More: {{ chapter.title }}</a>
+    </div>
+{% endif %}

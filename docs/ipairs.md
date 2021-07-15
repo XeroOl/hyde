@@ -1,6 +1,7 @@
 ---
 layout: doc
-title: 4.4 - Looping over a table
+title: Looping over a table
 section: 4
+subsection: 5
 incomplete: true
 ---
