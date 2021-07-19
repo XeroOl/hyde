@@ -34,7 +34,7 @@ set {10, 100, 'drunk', 100, 'tispy'}
 ```
 ---
 
-##function signature:
+## Function Signature
 ```lua
 set {beat, percent, mod}
 ```
