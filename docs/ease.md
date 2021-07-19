@@ -5,6 +5,18 @@ section: 1
 subsection: 2
 incomplete: true
 ---
+
+Another basic way to manipulate mods in the Mirin Template is the `ease` function.
+This function takes a mod, and changes it from its current value to another value over a length of time smoothly.
+The way it smoothly connects the values is specified with an [ease function](eases)
+(for more information about eases please reference https://easings.net)
+
+```lua
+-- this will linearly change drunk from 0 to 100 percent
+ease{0,10,linear,100,'drunk'}
+-- 
+```
+
 ```lua
 ease {beat, len, ease_fn, percent, mod}
 ```
