@@ -1,0 +1,77 @@
+<html>
+	<header>
+		<title>Chart2Lua2Lua By XeroOl</title>
+	</header>
+	<body>
+		<p> This is a tool created by XeroOl for processing NotITG's Chart2Lua output. </p>
+		<textarea cols = "80" rows = "20" placeholder = "Paste your notedata.xml here" id = "notedata"></textarea> <br/>
+		<p> Select type of lua table to output: </p>
+		<input type = "radio" name = "luatype" id = "radio1" checked> Beats only </input> <br/>
+		<input type = "radio" name = "luatype" id = "radio2"> Beats and Columns </input> <br/>
+		<input type = "radio" name = "luatype" id = "radio3"> Beats and Lengths </input> <br/>
+		<input type = "radio" name = "luatype" id = "radio4"> Beats, Columns, and Lengths </input> <br/>
+		<input type = "radio" name = "luatype" id = "radio5"> Beats, Columns, and Player numbers (Convert doubles to 2 players) </input> <br/>
+		<p> Additional Options: </p>
+		<input type = "checkbox" id = "check1" checked> Store length with integer keys </input> <br/>
+		<input type = "checkbox" id = "check2"> Minify code </input> <br/>
+		<input type = "checkbox" id = "check3" onclick = "toggle()"> Only read column: </input>
+		<input size = "1" maxlength = "1" disabled = "true" value = "0" id = "colnum"></input> <p/>
+		<button onclick ="process()">Process Notedata</button>
+		<p/>
+		<textarea cols = "80" rows = "20" id = "output"> </textarea> <br/>
+		<script>
+			function get(val) { return document.getElementById(val); }
+			function trim(val) { return val.replace(/0+$/g,"").replace(/\.$/g,"").replace(/^0\./g,"."); }
+			function toggle() { get("colnum").disabled = !get("check3").checked; }
+			function process() {
+				try {
+					var notedata = get("notedata").value;
+					var str = (/([\w]+) = \{/g.exec(notedata)[1] + " = {");
+					var reg = /\{([^\}\n\{]+)\}./g;
+					
+					var radio1 = get("radio1").checked;
+					var radio2 = get("radio2").checked;
+					var radio3 = get("radio3").checked;
+					var radio4 = get("radio4").checked;
+					var radio5 = get("radio5").checked;
+					var lengthstring = get("check1").checked ? "" : "length = ";
+					var minify = get("check2").checked;
+					var colfilter = get("check3").checked;
+					var colfilternum = get("colnum").value;
+					
+					var commaflag = false;
+					var match = reg.exec(notedata);
+					
+					while (match != null) {
+						var val = match[1].replace("length=","").split(',');
+						if (colfilter && val[1] != colfilternum){
+							match = reg.exec(notedata);
+							continue;
+						}
+						if (commaflag) {
+							str += ", ";
+						}
+						commaflag = true;
+						if (radio1) {
+							str += trim(val[0]);
+						}else if (radio2) {
+							str += "{" + trim(val[0]) + ", " + val[1] + "}";
+						}else if (radio3) {
+							str += "{" + trim(val[0]) + (val[3] != null ? ", " + lengthstring + trim(val[3]) : "") + "}";
+						}else if (radio4) {
+							str += "{" + trim(val[0]) + ", " + val[1] + (val[3] != null ? ", " + lengthstring + trim(val[3]) : "") + "}";
+						}else if (radio5) {
+							str += "{" + trim(val[0]) + ", " + (val[1] % 4) + ", " + Math.floor(val[1] / 4 + 1) + "}";
+						}
+						match = reg.exec(notedata);
+					}
+					str += "}";
+					get("output").value = "local " + (minify ? str.replace(/ /g,"") : str);
+				} catch(err) {
+					console.log(err);
+					get("output").value = "Error: invalid notedata";
+				}
+			}
+		</script>
+	</body>
+</html>
