@@ -3,33 +3,43 @@ layout: doc
 title: Set
 section: 1
 subsection: 1
-incomplete: true
 ---
+
+The `set` function is the simplest function that the mirin template offers.
+It allows you to set a [mod](mods) to a value at a specific beat in the song.
+
+```lua
+-- This sets the speed mod to 1x at beat 0
+set {0, 1, 'xmod'}
+
+-- This will set the mod 'drunk' to 100 at beat 10
+set {10, 100, 'drunk'}
+```
+
+After any mod is set to a value it will stay at that value until the end of the song, or another function modifies it.
+
+```lua
+-- set the mod 'drunk' like the previous example
+set {10, 100, 'drunk'}
+
+-- set drunk back to 0 at beat 20
+set {20, 0, 'drunk'}
+```
+
+The `set` function, like many other mirin template functions, allows you to set multiple mods in the same function call.
+
+```lua
+-- This will set the mods 'drunk' and 'tipsy' to 100 at beat 10
+set {10, 100, 'drunk', 100, 'tispy'}
+```
+---
+
+## Function Signature
 ```lua
 set {beat, percent, mod}
 ```
-Use the `set` function to set a mod to a specific value at a specific beat in the song.
-
-Arguments:
 
 | -------------- | ---------- |
 | `beat: number` | The song beat when the mod applies. |
 | `percent: number` | The target amount to set the mod to. |
 | `mod: string` | The mod to apply. |
-
-Examples:
-```lua
-set {0, 1.5, 'xmod'}
-set {10, 100, 'invert'}
-```
-
-The `set` function can also take more than one percent/mod at a time.
-```lua
-set {
-	1, -- the song beat
-	100, 'invert',
-	100, 'drunk',
-	100, 'bumpy',
-}
-```
-The `set` function can also be [player specific](players).
