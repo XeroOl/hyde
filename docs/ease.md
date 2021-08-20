@@ -19,7 +19,7 @@ ease {5, 15, outCubic, 200, 'tipsy'}
 ```
 
 Certain ease functions don't have the same behavior as a majority of eases.
-For example `pop` doesn't end at the value defined, instead it goes up to that value, before going back to where it started.
+For example `pop` doesn't end at the value defined, instead it goes up to that value, before going back to where it started. After beat 1, the value of `tiny` will still be `0`.
 
 ```lua
 -- This will move tiny from 0 down to -100 and then back up to 0, starting at beat 0 over 1 beat.

@@ -1,15 +1,18 @@
 markdown: kramdown
+plugins: [jekyll-paginate]
 
 # Setup
 title:            Mirin Template
 tagline:          'A NotITG Template'
 description:      'A <a href="https://notitg.heysora.net" target="_blank">NotITG</a> template that features a powerful ease system. Made by <a href="https://github.com/XeroOl">XeroOl</a>.'
 url:              http://xerool.github.io
-baseurl:          /hyde/
+baseurl:          /hyde
 
 author:
   name:           'XeroOl'
   url:            www.github.com/XeroOl
+
+paginator: 5
 
 # Custom vars
 version:          3.0.1

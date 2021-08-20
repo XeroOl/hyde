@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 ---
 {{ content }}
 {% assign pages_list = site.pages | where: "section", page.section | sort: "subsection" %}
@@ -7,7 +7,7 @@ layout: post
     {% for doc in pages_list %}
         {% if doc.subsection != 0 %}
             <div class="post">
-                <h1 class="{% if page.incomplete %}incomplete {% endif %}post-title">
+                <h1 class="{% if doc.incomplete %}incomplete {% endif %}post-title">
                     <a href="{{ doc.url | prepend:site.baseurl }}">{{ doc.title }}</a>
                 </h1>
                 {{ doc.content | markdownify }}

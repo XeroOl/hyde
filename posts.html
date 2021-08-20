@@ -1,0 +1,14 @@
+---
+layout: page
+title: Posts
+children: post
+---
+{% for post in site.posts %}
+<div class="post">
+	<h1 class="{% if post.incomplete %}incomplete {% endif %}post-title">
+		<a href="{{ post.url | prepend:site.baseurl }}">{% if post.long_title %}{{ post.long_title }}{% else %}{{ post.title }}{% endif %}</a>
+	</h1>
+	{{ post.excerpt }}
+	<a href="{{ post.url | prepend:site.baseurl }}">Read more</a>
+</div>
+{% endfor %}
