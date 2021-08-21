@@ -128,9 +128,11 @@ ease {12, 2, outExpo, 100, 'invert'}
 -- on beat 16, for 2 beats, use the `outExpo` animation to set 0% invert
 ease {12, 2, outExpo, 0, 'invert'}
 ```
-This example used a length of `2`, and the `outExpo` ease, but you can try changing the ease to another one from [the ease list](docs/eases), and you can change the length.
+This example used a length of `2`, and the `outExpo` ease.
+Notice how the mod name has `''` quotes around it, and the ease name has no quotes.
+Try changing the ease to another one from [the ease list](docs/eases), or changing the length.
 You can find more information about `ease` on [its documentation page](/docs/ease).
 
 <a name="conclusion"/>
-## Conclusion
-Now you have everything you need to begin modding. The [main page](/index) has links to other functions you can read about.
+## From Here
+Now you have everything you need to begin modding. Head to the <TODO> page to choose what to learn next.

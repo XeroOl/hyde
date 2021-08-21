@@ -1,5 +1,4 @@
 markdown: kramdown
-plugins: [jekyll-paginate]
 
 # Setup
 title:            Mirin Template
@@ -11,8 +10,6 @@ baseurl:          /hyde
 author:
   name:           'XeroOl'
   url:            www.github.com/XeroOl
-
-paginator: 5
 
 # Custom vars
 version:          3.0.1

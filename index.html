@@ -3,14 +3,18 @@ layout: default
 title: Home
 ---
 <div class="post">
-  Mirin Template
-  [NotITG](https://notitg.heysora.net) is a fork of OpenITG that is designed for creating and playing mod files.
+  {% capture main_markdown %}
+# Mirin Template
 
-  [The Mirin Template](https://www.github.com/XeroOl/notitg-mirin) provides tools to allow mod file creators to implement their ideas.
+[NotITG](https://notitg.heysora.net) is a fork of OpenITG that is designed for creating and playing mod files.
 
-  Join the [NotITG Discord](https://uksrt.heysora.net/discord) to learn more about NotITG.
+[The Mirin Template](https://www.github.com/XeroOl/notitg-mirin) provides tools to allow mod file creators to implement their ideas.
 
-  The Mirin Template is designed to make easing as simple as possible, while remaining incredibly powerful.
+Join the [NotITG Discord](https://uksrt.heysora.net/discord) to learn more about NotITG.
+
+The Mirin Template is designed to make easing as simple as possible, while remaining incredibly powerful."
+  {% endcapture %}
+  {{ main_markdown | markdownify }}
 </div>
 <div class="posts">
   {% for post in paginator.posts %}
