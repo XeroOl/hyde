@@ -1,3 +1,23 @@
+html {
+  --scrollbarBG: transparent;
+  --thumbBG: var(--nord3);
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
 .incomplete:after {
 	content:" \26A0";
 }
@@ -23,4 +43,21 @@
 }
 .flex-object {
 	width:450px;
+}
+.button {
+	display: inline-block;
+  border-color: var(--nord10);
+	border-style: solid;
+	border-width: 1px;
+  padding: 4px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+  border-radius: 4px;
+/*  width: 120px; */
+  text-align: center;
+}
+.button:hover {
+  background-color: var(--nord10);
+	color: white;
+  text-align: center;
 }
