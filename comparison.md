@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: hidden
 title: Choosing a Template
 ---
 ## Mod Beginners
@@ -21,5 +21,5 @@ however, it's really clear to understand how the exsch code works. In the mirin 
 
 so you can't manually touch activation rates, raw modstrings, and sustain times. Another thing to mention, completely off topic from the other stuff, is performance.
 
-The mirin template isn't the *best* at performance, but I've spent a lot of effort keeping the big O low, even if the implementation is average. This means that you can insert hundreds of thousands of eases with relatively little issue. Other templates are sometimes bad at handling this sort of thing. GAT2 iirc had to split its tables up because of how bad the performance is when you have a bunch of eases. The mirin template shouldn't run into issues like this.
+The mirin template isn't the *best* at performance, but I've spent a lot of effort keeping the big O low. This means that you can insert hundreds of thousands of eases with relatively little issue. Other templates are sometimes bad at handling this sort of thing. GAT2 iirc had to split its tables up because of how bad the performance is when you have a bunch of eases. The mirin template shouldn't run into issues like this.
 
