@@ -25,8 +25,24 @@ Notice that they all begin with "Layer". NotITG's XML syntax allows any name in 
 
 The game draws actors from top to bottom in the file. So, in the example above, the Quad actor would be drawn first, then `my_proxy`, then `my_proxy2`, then `funny.png`, then `other.xml`. It's important to understand that something drawn later is drawn *on top of* something drawn earlier. So, in the example, the quad actor is in the back, and the `other.xml` is in the front.
 
-Let's look at what types of actors there are.
+Let's look at what types of actors there are:
 
+## Quad
+
+
+```xml
+<Layer Type="Quad"/>
+```
+
+Here's the most basic actor you can have, a plain Quad with no commands or attributes. Quad stands for quadrilatiral, but it really just means a rectangle. Because nothing's done to it, it's going to be the default size of 1x1. It's not very useful without a name, so let's name it something.
+
+```xml
+<Layer Type="Quad" Name="foo"/>
+```
+
+
+
+[CraftedCart's Excellent Lua API Docs for NotITG](https://craftedcart.gitlab.io/notitg_docs/lua_api/index.html)
 TODO
 Basic:
 Type="Quad"

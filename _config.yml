@@ -7,6 +7,14 @@ description:      'A <a href="https://notitg.heysora.net" target="_blank">NotITG
 url:              http://xerool.github.io
 baseurl:          /hyde
 
+collections:
+  docs:
+    output: true
+    permalink: /docs/:title/
+  posts:
+    output: true
+    permalink: /posts/:title/
+
 author:
   name:           'XeroOl'
   url:            www.github.com/XeroOl

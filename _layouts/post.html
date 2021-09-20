@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="post">
-  <h1 class="{% if page.incomplete %}incomplete {% endif %}post-title">{% if page.long_title %}{{ page.long_title }}{% else %}{{ page.title }}{% endif %}</h1>
+  <h1 class="{% if page.incomplete %}incomplete {% endif %}post-title">{% if page.longtitle %}{{ page.longtitle }}{% else %}{{ page.title }}{% endif %}</h1>
   {% if page.author %}
   <span class="post-date">{{ page.author }} - {{ page.date | date_to_string }}</span>
   {% endif %}

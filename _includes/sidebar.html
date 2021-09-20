@@ -14,7 +14,7 @@
 
                 <!-- Children for Documentation -->
                 {% if item.children == "doc" and (page.children == "doc" or page.layout == "doc") %}
-                    {% assign docs_list = site.pages | where: "layout", "doc" | sort: "subsection" | sort: "section" %}
+                    {% assign docs_list = site.docs | sort: "subsection" | sort: "section" %}
                     {% for doc in docs_list %}
                         {% if doc.section == page.section or doc.subsection == 0 %}
                             <a class="sidebar-nav-item{% if page.url == doc.url %} active{% endif %}" href="{{ doc.url | prepend:site.baseurl }}">
@@ -31,7 +31,7 @@
                     {% assign post_list = site.posts | sort: "date" %}
                     {% for item in post_list %}
                         <a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" href="{{ item.url | prepend:site.baseurl }}">
-                            <span class="indented">{{ item.title }}<span>
+                            <span class="indented">{{ item.title }}</span>
                         </a>
                     {% endfor %}
                 {% endif %}

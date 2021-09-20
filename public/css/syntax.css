@@ -1,7 +1,7 @@
 .highlight .bp { color: #366 } /* Name.Builtin.Pseudo */
-.highlight .c { color: var(--nord3) } /* Comment */
-.highlight .c1 { color: var(--nord3) } /* Comment.Single */
-.highlight .cm { color: var(--nord3); font-style: italic } /* Comment.Multiline */
+.highlight .c { color: #616e87 } /* Comment */
+.highlight .c1 { color: #616e87 } /* Comment.Single */
+.highlight .cm { color: #616e87; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: var(--nord10) } /* Comment.Preproc */
 .highlight .cs { color: var(--nord12) } /* Comment.Special */
 .highlight .err { color: var(--nord11) } /* Error */
