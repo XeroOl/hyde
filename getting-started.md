@@ -126,7 +126,7 @@ Here's an example that that turns `invert` on at beat 12, and turns it back off 
 ease {12, 2, outExpo, 100, 'invert'}
 
 -- on beat 16, for 2 beats, use the `outExpo` animation to set 0% invert
-ease {12, 2, outExpo, 0, 'invert'}
+ease {16, 2, outExpo, 0, 'invert'}
 ```
 This example used a length of `2`, and the `outExpo` ease.
 Notice how the mod name has `''` quotes around it, and the ease name has no quotes.
