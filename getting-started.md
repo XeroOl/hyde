@@ -24,7 +24,7 @@ If everything went right, you should be able to start up the game by running the
 <a name="download-the-template"/>
 ## Download the Template
 To start, you need to find the folder that NotITG is installed in.
-Download the [Mirin Template Code from GitHub]({{ site.github.repo }}/archive/v{{ site.version }}.zip) and unzip it into a song pack in your `Songs` folder.
+Download the [Mirin Template Code from GitHub]({{ site.github.repo }}/releases/download/v{{ site.version }}/mirin-template-{{ site.version }}.zip) and unzip it into a song pack in your `Songs` folder.
 When you're done, the structure should be something like this: (instead of `My Song Pack` you can name the pack whatever you want):
 ```
 NotITG
